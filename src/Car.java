@@ -1,52 +1,19 @@
-public class Car extends Vehicle {
 
+public class Car extends Vehicle {
     private Engine engine;
 
-    public Car(
-            String id,
-            int speed,
-            String fuelType,
-            double fuelLevel,
-            String vehicleType,
-            String brand,
-            int modelYear,
-            double engineCapacity,
-            int seatingCapacity,
-            String color,
-            double price,
-            boolean isElectric,
-            double mileage,
-            double weight,
-            boolean hasABS,
-            boolean hasAirbags,
-            String transmission,
-            String fuelEfficiency,
-            String location,
-            boolean isAvailable,
-            String owner,
-            String registrationNumber,
-            boolean isInsured,
-            String serviceHistory,
-            Engine engine
-    ) {
-        super(
-            id, speed, fuelType, fuelLevel, vehicleType, brand, modelYear,
-            engineCapacity, seatingCapacity, color, price, isElectric,
-            mileage, weight, hasABS, hasAirbags, transmission,
-            fuelEfficiency, location, isAvailable, owner,
-            registrationNumber, isInsured, serviceHistory
-        );
-
+    // ده الكونستراكتور المختصر اللي الـ Main محتاجه
+    public Car(String id, int speed, String brand, double price, String color, Engine engine) {
+        // بنبعت القيم المهمة، والباقي بنحطه افتراضي عشان نريح دماغنا
+        super(id, speed, "Petrol", 50, "Car", brand, 2024, engine.getEngineCapacity(), 
+              5, color, price, false, 0, 1500, true, true, "Automatic", 
+              "Medium", "City", true, "None", "Pending", true, "New");
         this.engine = engine;
     }
 
     @Override
     public void move() {
-        System.out.println(
-            "Car is moving with engine capacity "
-            + engine.getEngineCapacity()
-            + "L at speed "
-            + speed + " km/h"
-        );
+        System.out.println("Car is moving with engine " + engine.getEngineCapacity() + "L");
     }
 }
+
