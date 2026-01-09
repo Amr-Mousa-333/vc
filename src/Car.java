@@ -2,9 +2,7 @@
 public class Car extends Vehicle {
     private Engine engine;
 
-    // ده الكونستراكتور المختصر اللي الـ Main محتاجه
     public Car(String id, int speed, String brand, double price, String color, Engine engine) {
-        // بنبعت القيم المهمة، والباقي بنحطه افتراضي عشان نريح دماغنا
         super(id, speed, "Petrol", 50, "Car", brand, 2024, engine.getEngineCapacity(), 
               5, color, price, false, 0, 1500, true, true, "Automatic", 
               "Medium", "City", true, "None", "Pending", true, "New");
